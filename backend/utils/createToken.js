@@ -16,13 +16,13 @@ export const generateToken = (res, userId) => {
   return token;
 };
 
-export const generateWMAToken = (res, wmaId) => {
-  const token = jwt.sign({ wmaId }, process.env.JWT_SECRET, {
+export const generateFleetManagerToken = (res, fleetManagerId) => {
+  const token = jwt.sign({ fleetManagerId }, process.env.JWT_SECRET, {
     expiresIn: "30d",
   });
 
   // Set JWT as an HTTP-Only Cookie
-  res.cookie("jwt_wma", token, {
+  res.cookie("jwt_fleet_manager", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV !== "development",
     sameSite: "strict",

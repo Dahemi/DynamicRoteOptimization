@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import WMADrawer from "../components/WMADrawer";
-import WmaAuthService from "../../../api/wmaApi";
+import WmaAuthService from "../../../api/fleetManagerApi";
 import { ToastContainer, toast } from "react-toastify";
 import { getAllCollectorsInWma } from "../../../api/collectorApi";
 import { getAllAreas } from "../../../api/areaApi";

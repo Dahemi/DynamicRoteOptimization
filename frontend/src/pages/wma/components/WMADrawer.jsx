@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import WmaAuthService from "../../../api/wmaApi";
+import WmaAuthService from "../../../api/fleetManagerApi";
 import { toast } from "react-toastify";
 
 const WMADrawer = ({ children }) => {
@@ -18,7 +18,7 @@ const WMADrawer = ({ children }) => {
 
   const handleLogout = async () => {
     try {
-      await WmaAuthService.logoutCurrentWma();
+      await WmaAuthService.logoutCurrentFleetManager();
       WmaAuthService.logout();
       toast.success("Logged out successfully!");
       setTimeout(() => {

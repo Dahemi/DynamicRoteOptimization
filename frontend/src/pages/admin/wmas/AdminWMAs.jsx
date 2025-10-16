@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminDrawer from "../components/AdminDrawer";
-import AuthService from "../../../api/wmaApi";
+import AuthService from "../../../api/fleetManagerApi";
 import { getAllCollectorsInWma } from "../../../api/collectorApi";
 import { ToastContainer, toast } from "react-toastify";
 import jsPDF from "jspdf";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WMADrawer from "../components/WMADrawer";
-import WmaAuthService from "../../../api/wmaApi";
+import WmaAuthService from "../../../api/fleetManagerApi";
 import { getAllAreas } from "../../../api/areaApi";
 import { ToastContainer, toast } from "react-toastify";
 import AddIcon from "@mui/icons-material/Add";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import WMADrawer from "../components/WMADrawer"
-import WmaAuthService from "../../../api/wmaApi"
+import WmaAuthService from "../../../api/fleetManagerApi"
 import { deleteSchedule, getAllSchedulesInWma } from '../../../api/scheduleApi';
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";

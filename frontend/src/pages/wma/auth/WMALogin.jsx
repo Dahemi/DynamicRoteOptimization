@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WmaAuthService from "../../../api/wmaApi";
+import WmaAuthService from "../../../api/fleetManagerApi";
 import { Link, useNavigate } from "react-router-dom";
 
 const WMALogin = () => {
@@ -13,9 +13,9 @@ const WMALogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await WmaAuthService.wmaLogin({ email, password });
+      const response = await WmaAuthService.fleetManagerLogin({ email, password });
       console.log("Login successful", response);
-      navigate("/wma/dashboard");
+      navigate("/fleet-manager/dashboard");
     } catch (error) {
       setError(error.message);
     }

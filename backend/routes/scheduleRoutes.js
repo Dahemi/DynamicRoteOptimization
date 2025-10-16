@@ -10,15 +10,15 @@ import {
     getSchedulesByWma,
     getActiveSchedules
 } from "../controllers/scheduleController.js";
-import { authenticateWMA, authenticateCollector } from "../middlewares/authMiddleware.js";
+import { authenticateFleetManager, authenticateCollector } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-// WMA Schedule Management Routes
+// Fleet Manager Schedule Management Routes
 router
   .route("/")
-  .post(authenticateWMA, createSchedule) // WMA creates schedules
-  .get(authenticateWMA, getAllSchedules); // WMA views all their schedules
+  .post(authenticateFleetManager, createSchedule) // Fleet Manager creates schedules
+  .get(authenticateFleetManager, getAllSchedules); // Fleet Manager views all their schedules
 
 // Collector Routes
 router.route("/collector-schedules").get(authenticateCollector, getTruckSchedules);
@@ -32,11 +32,11 @@ router.route("/wma-schedules/:id").get(getSchedulesByWma);
 // Get active schedules (In Progress status)
 router.route("/active").get(getActiveSchedules);
 
-// Schedule CRUD operations (WMA authenticated)
+// Schedule CRUD operations (Fleet Manager authenticated)
 router
   .route("/:id")
   .get(getScheduleById)
-  .put(authenticateWMA, updateSchedule) // WMA updates schedules
-  .delete(authenticateWMA, deleteSchedule); // WMA deletes schedules
+  .put(authenticateFleetManager, updateSchedule) // Fleet Manager updates schedules
+  .delete(authenticateFleetManager, deleteSchedule); // Fleet Manager deletes schedules
 
 export default router;

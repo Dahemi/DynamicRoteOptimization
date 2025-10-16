@@ -13,7 +13,7 @@ import configurePassport from "./config/passport.js";
 import userRoutes from "./routes/userRoutes.js";
 
 import collectorRoutes from "./routes/collectorRoutes.js"
-import wmaRoutes from "./routes/wmaRoutes.js";
+import fleetManagerRoutes from "./routes/fleetManagerRoutes.js";
 import garbageRoutes from "./routes/garbageRoutes.js"; // fixed typo in garbageRoutes
 import scheduleRoutes from "./routes/scheduleRoutes.js";
 import transactionRoutes from "./routes/transactionRoutes.js";
@@ -22,6 +22,7 @@ import grievanceRoutes from "./routes/grievanceRoutes.js"; // Import grievanceRo
 // Removed: Smart Device routes - replaced by Smart Bin system (one bin per user)
 // import smartDeviceRoutes from "./routes/smartDeviceRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js"; // Import contactRoutes
+import analyticsRoutes from "./routes/analyticsRoutes.js"; // Import analyticsRoutes
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -66,8 +67,8 @@ app.get("/api", (req, res) => {
 // Users Route
 app.use("/api/users", userRoutes);
 
-// WMA Route
-app.use("/api/wmas", wmaRoutes);
+// Fleet Manager Route
+app.use("/api/fleet-managers", fleetManagerRoutes);
 
 // Garbage Route
 app.use("/api/garbage", garbageRoutes);
@@ -92,6 +93,9 @@ app.use("/api/grievances", grievanceRoutes);
 
 // Contact Route
 app.use("/api/contacts", contactRoutes);
+
+// Analytics Route
+app.use("/api/analytics", analyticsRoutes);
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));
 

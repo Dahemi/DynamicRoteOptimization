@@ -6,7 +6,7 @@ import { getAllGarbages } from "../../api/garbageApi";
 import { getAllCollectors } from "../../api/collectorApi";
 import { getAllTransactions } from "../../api/transactionApi";
 import { getAllAreas } from "../../api/areaApi";
-import WmaAuthService from "../../api/wmaApi";
+import WmaAuthService from "../../api/fleetManagerApi";
 import { getGrievanceStatistics } from "../../api/grievanceApi";
 import { toast } from "react-toastify";
 

@@ -13,7 +13,7 @@ import {
 import {
   authenticate,
   authorizeAdmin,
-  authenticateWMA,
+  authenticateFleetManager,
   authenticateCollector,
 } from "../middlewares/authMiddleware.js";
 
@@ -22,7 +22,7 @@ const router = express.Router();
 // Route to create a new collector
 router
   .route("/")
-  .post(authenticateWMA, createCollector)
+  .post(authenticateFleetManager, createCollector)
   .get(getAllCollectors);
 
 router.post("/logout", authenticateCollector, logoutCurrentCollector);

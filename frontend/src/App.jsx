@@ -22,7 +22,8 @@ import AdminUsers from "./pages/admin/users/AdminUsers";
 import AdminWMAs from "./pages/admin/wmas/AdminWMAs";
 import AdminGrievances from "./pages/admin/grievances/AdminGrievances";
 
-import WMADashboard from "./pages/wma/dashboard/WMADashboard";
+import FleetManagerDashboard from "./pages/fleetManager/dashboard/FleetManagerDashboard";
+import FleetManagerLogin from "./pages/fleetManager/auth/FleetManagerLogin";
 import WMACollectors from "./pages/wma/collectors/ViewCollectors";
 import WMAProfile from "./pages/wma/profile/WMAProfile";
 import WMASchedules from "./pages/wma/schedule/ViewSchedules";
@@ -89,29 +90,30 @@ function App() {
           {/* Removed: Smart Device Request - one bin per user enforced */}
           {/* <Route path="/user/smartDevice" element={<ProtectedRoute><UserSmartDeviceRequest /></ProtectedRoute>} /> */}
 
-          {/* Protected WMA Routes */}
-          <Route path="/wma/dashboard" element={<ProtectedRoute><WMADashboard /></ProtectedRoute>} />
-          <Route path="/wma/service-areas" element={<ProtectedRoute><WMAServiceAreas /></ProtectedRoute>} />
-          <Route path="/wma/collectors" element={<ProtectedRoute><WMACollectors /></ProtectedRoute>} />
+          {/* Protected Fleet Manager Routes */}
+          <Route path="/fleet-manager/login" element={<FleetManagerLogin />} />
+          <Route path="/fleet-manager/dashboard" element={<ProtectedRoute><FleetManagerDashboard /></ProtectedRoute>} />
+          <Route path="/fleet-manager/service-areas" element={<ProtectedRoute><WMAServiceAreas /></ProtectedRoute>} />
+          <Route path="/fleet-manager/collectors" element={<ProtectedRoute><WMACollectors /></ProtectedRoute>} />
           <Route
-            path="/wma/collectors/update"
+            path="/fleet-manager/collectors/update"
             element={<ProtectedRoute><WmaCollectorUpdate /></ProtectedRoute>}
           />
           <Route
-            path="/wma/collectors/create"
+            path="/fleet-manager/collectors/create"
             element={<ProtectedRoute><WmaCollectorCreate /></ProtectedRoute>}
           />
-          <Route path="/wma/transactions" element={<ProtectedRoute><WMATransaction /></ProtectedRoute>} />
+          <Route path="/fleet-manager/transactions" element={<ProtectedRoute><WMATransaction /></ProtectedRoute>} />
           <Route
-            path="/wma/schedules/update"
+            path="/fleet-manager/schedules/update"
             element={<ProtectedRoute><ScheduleUpdate /></ProtectedRoute>}
           />
           <Route
-            path="/wma/schedules/create"
+            path="/fleet-manager/schedules/create"
             element={<ProtectedRoute><CreateSchedule /></ProtectedRoute>}
           />
-          <Route path="/wma/schedules" element={<ProtectedRoute><WMASchedules /></ProtectedRoute>} />
-          <Route path="/wma/profile" element={<ProtectedRoute><WMAProfile /></ProtectedRoute>} />
+          <Route path="/fleet-manager/schedules" element={<ProtectedRoute><WMASchedules /></ProtectedRoute>} />
+          <Route path="/fleet-manager/profile" element={<ProtectedRoute><WMAProfile /></ProtectedRoute>} />
 
           {/* Protected Collector Routes */}
           <Route path="/collector/login" element={<CollectorLoginRedirect />} />

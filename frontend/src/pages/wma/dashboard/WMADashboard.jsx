@@ -4,7 +4,7 @@ import SliderComponent from "../components/Slider";
 import { DollarSign, TrendingUp, Trash } from "lucide-react";
 import { getAllCollectorsInWma} from "../../../api/collectorApi"
 import { getAllSchedulesInWma } from "../../../api/scheduleApi"; 
-import AuthService from "../../../api/wmaApi";
+import AuthService from "../../../api/fleetManagerApi";
 
 const WMADashboard = () => {
   const [totalIncome, setTotalIncome] = useState(15000); 
@@ -16,7 +16,7 @@ const WMADashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const wmaDetails  = await AuthService.getCurrentWmaDetails();
+        const wmaDetails  = await AuthService.getCurrentFleetManagerDetails();
         const currentWmaId = wmaDetails._id;
         setWmaId(currentWmaId); 
 

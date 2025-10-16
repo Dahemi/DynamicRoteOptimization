@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import WmaAuthService from "../../../api/wmaApi";
+import WmaAuthService from "../../../api/fleetManagerApi";
 import { toast } from "react-toastify";
 
 const WMARegister = () => {

@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const wmaSchema = mongoose.Schema(
+const fleetManagerSchema = mongoose.Schema(
   {
-    wmaname: {
+    managerName: {
       type: String,
       required: true,
     },
@@ -46,6 +46,6 @@ const wmaSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-const WMA = mongoose.model("WMA", wmaSchema);
+const FleetManager = mongoose.model("FleetManager", fleetManagerSchema);
 
-export default WMA;
+export default FleetManager;

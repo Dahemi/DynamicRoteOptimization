@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import WMADrawer from "../components/WMADrawer";
-import AuthService from "../../../api/wmaApi";
+import AuthService from "../../../api/fleetManagerApi";
 import { ToastContainer, toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router";
 

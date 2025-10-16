@@ -1,7 +1,7 @@
 import User from "../models/userModel.js";
 import asyncHandler from "../middlewares/asyncHandler.js";
 import bcrypt from "bcryptjs";
-import { generateToken, generateWMAToken } from "../utils/createToken.js";
+import { generateToken } from "../utils/createToken.js";
 import passport from "passport";
 
 /**
